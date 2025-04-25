@@ -1,6 +1,8 @@
 # Checkpoint 1 - O Caso de Luminosidade
 Projeto de circuito para uma vinheria que busca automatizar o monitoramento de luminosiade dos vinhos armazenados na adega da vinícula. Utilizando dos conceitos aprendidos em sala de aula e pesquisas sobre o tema.
 
+Veja o vídeo explicativo do projeto 👉 **[Clique aqui!](https://youtu.be/O685vqmB2A4)**
+
 ## 👥 Equipe do Projeto
 * Julia Souza Costa Schiavi 
 * Thayna Ferreira Lopes 
