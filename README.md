@@ -37,7 +37,7 @@ Ambiente simulado para testes do circuito 👉 **[Clique Aqui!](https://www.tink
 ![Circuito montado em simulação](image.png)
 
 ### 👩‍💻 Código do circuito
-O código que executa corretamente o circuito de moniotoramento de luminosidade da vinheira Agnello está na pasta ***CP1_correto/*** com um único arquivo chamado **CP1_correto.ino** presente. Este arquivo é o que permite a IDE do arduino passar o código ao micro-computador e exutar o código corretamente.
+O código que executa corretamente o circuito de moniotoramento de luminosidade da vinheira Agnello está na pasta ***CP1_correto/*** com um único arquivo chamado **CP1_correto.ino** presente. Este arquivo é o que permite a IDE do arduino passar o código ao micro-computador e executar o código corretamente.
 
 Pode também apenas clicar aqui 👉 **[CP1_correto.ino](https://github.com/user-mind/projetos-edgecomputing/blob/main/CP1_correto/CP1_correto.ino)**
 
