@@ -36,12 +36,12 @@ Veja o vídeo explicativo do projeto 👉 **[Clique aqui!](https://youtu.be/aapw
 ### Montagem do circuito
 Ambiente simulado para testes do circuito 👉 **[Clique Aqui!](https://www.tinkercad.com/things/f50hGzP5thd/editel?sharecode=tgZ8qZTpCSmsnTTNP5ABrLJkDg0fndhvUkt0YviL7DE)**
 
-![Circuito montado em simulação](image.png)
+![Circuito montado em simulação](./assets/image.png)
 
 ### 👩‍💻 Código do circuito
-O código que executa corretamente o circuito de moniotoramento de luminosidade da vinheira Agnello está na pasta ***CP1_correto/*** com um único arquivo chamado **CP1_correto.ino** presente. Este arquivo é o que permite a IDE do arduino passar o código ao micro-computador e executar o código corretamente.
+O código que executa corretamente o circuito de moniotoramento de luminosidade da vinheira Agnello está na pasta ***codigo_cp/*** com um único arquivo chamado **codigo_cp.ino** presente. Este arquivo é o que permite a IDE do arduino passar o código ao micro-computador e executar o código corretamente.
 
-Pode também apenas clicar aqui 👉 **[CP1_correto.ino](https://github.com/user-mind/projetos-edgecomputing/blob/main/CP1_correto/CP1_correto.ino)**
+Pode também apenas clicar aqui 👉 **[codigo_cp.ino](https://github.com/user-mind/projetos-edgecomputing/blob/main/codigo_cp/codigo_cp.ino)**
 
 ## ‼️Informações Importantes
 
