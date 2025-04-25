@@ -1,7 +1,7 @@
 # Checkpoint 1 - O Caso de Luminosidade
 Projeto de circuito para uma vinheria que busca automatizar o monitoramento de luminosiade dos vinhos armazenados na adega da vinícula. Utilizando dos conceitos aprendidos em sala de aula e pesquisas sobre o tema.
 
-Veja o vídeo explicativo do projeto 👉 **[Clique aqui!](https://youtu.be/O685vqmB2A4)**
+Veja o vídeo explicativo do projeto 👉 **[Clique aqui!](https://youtu.be/aapwjsI5mDc)**
 
 ## 👥 Equipe do Projeto
 * Julia Souza Costa Schiavi 
@@ -49,13 +49,13 @@ Pode também apenas clicar aqui 👉 **[CP1_correto.ino](https://github.com/user
 <dl>
 
 <dt><strong>Led Verde</strong></dt>
-<dd>Possuí luminosidade <strong><em>maior a 800</em></strong>, indicando que a iluminação atual é a ideal<dd>
+<dd>Possuí luminosidade <strong><em>menor que 350</em></strong>, indicando que a iluminação atual é a ideal<dd>
 
 <dt><strong>Led Amarelo</strong></dt>
-<dd>Possuí luminosidade <strong><em>entre 800 e 600</em></strong>, indicando que a iluminação atual não está correta, porém não traz grandes riscos aos vinhos na adega.<dd>
+<dd>Possuí luminosidade <strong><em>entre 350 e 800</em></strong>, indicando que a iluminação atual não está correta, porém não traz grandes riscos aos vinhos na adega.<dd>
 
 <dt><strong>Led Vermelho</strong></dt>
-<dd>Possuí luminosidade <strong><em>abaixo de 600</em></strong>, indicando que a iluminação atual está trazendo risco a aos vinhos armazenados no local em que a luz inadequada está presente. Soando um alarme para indicar o problema no local.<dd>
+<dd>Possuí luminosidade <strong><em>acima de 800</em></strong>, indicando que a iluminação atual está trazendo risco a aos vinhos armazenados no local em que a luz inadequada está presente. Soando um alarme para indicar o problema no local.<dd>
 
 </dl>
 
