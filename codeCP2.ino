@@ -1,5 +1,4 @@
 #include <DHT.h>  // Biblioteca para o sensor DHT11
-using namespace std;
 
 // #include <numeric> // Para usar std::accumulate
 
@@ -84,6 +83,8 @@ void loop() {
   //Caso tenha algum erro na leitura dos valores
   if (isnan(temp) || isnan(umid)) {
     Serial.println("Erro na leitura do DHT11");
+    lcd.clear();
+    lcd.setCursor(0,0);
     lcd.print ("Erro na leitura do DHT11");
     return;
   }
@@ -107,9 +108,6 @@ void loop() {
   mediaTemp = somaTemp / 5.0;  
   mediaUmid = somaUmid / 5;
 
-  //lista de mensagens a serem exibidas quando estiver tudo ok
-  String mensagem[] = {"Luminosidade OK", "Temperatura OK", "Umidade OK"};
-  int mensagemf[] = {mediaLDR, mediaTemp, mediaUmid};
 	
   if ( agora - tempoUltimaExibicao < intervaloExibicao) {
     return;
@@ -125,55 +123,29 @@ void loop() {
 
   if (mediaLDR >= lumALERT) {
     estado = 2;
-    lcd.setCursor(0,0);
-    lcd.print("Ambiente MUITO ");
-    lcd.setCursor(0,1);
-    lcd.print("CLARO");
+    escreveNaTela("Ambiente Muito", "Claro");
   } 
   if (mediaUmid < umidMIN) {
     estado = 2;
-    lcd.setCursor(0,0);
-    lcd.print("Umidade BAIXA "); 
-    lcd.setCursor(0,1);
-    lcd.print("Umidade = ");
-    lcd.print(mediaUmid);
-    lcd.print("%");
+    escreveNaTela("Umidade Alta", "Umidade ="+String(mediaUmid)+"%");
   }
   if (mediaUmid > umidMAX) {
     estado = 2;
-    lcd.setCursor(0,0);
-    lcd.print("Umidade ALTA "); 
-    lcd.setCursor(0,1);
-    lcd.print("Umidade = ");
-    lcd.print(mediaUmid);
-    lcd.print("%");
+    escreveNaTela("Umidade Alta", "Umidade ="+String(mediaUmid)+"%");
   }
 
   // Alerta
-  if (mediaLDR > lumOK){
+  if (mediaLDR > lumOK && mediaLDR < lumALERT){
     estado = 1;
-    lcd.setCursor(0,0);
-    lcd.print("Ambiente a meia"); 
-    lcd.setCursor(0,1);
-    lcd.print("luz");
+    escreveNaTela("Ambiente a meia", "luz");
   }
   if (mediaTemp < tempMIN) {
     estado = 1;
-    lcd.setCursor(0,0);
-    lcd.print("Temp. BAIXA "); 
-    lcd.setCursor(0,1);
-    lcd.print("Temp. = ");
-    lcd.print(mediaTemp);
-    lcd.print("C");
+    escreveNaTela("Temp Baixa", "Temp. ="+String(mediaTemp)+"C");
   }
   if (mediaTemp > tempMAX) {
     estado = 1; 
-    lcd.setCursor(0,0);
-    lcd.print("Temp. ALTA ");
-    lcd.setCursor(0,1);
-    lcd.print("Temp. = ");
-    lcd.print(mediaTemp);
-    lcd.print("C");
+    escreveNaTela("Temp Alta", "Temp. ="+String(mediaTemp)+"C");
   }
 
   // OK
@@ -181,21 +153,30 @@ void loop() {
     estado = 0;
     
     if((agora - tempoUltimaMensagem) > (intervaloMensagem + duracaoMensagem)){
-      for(int i = 0; i < 2; i++ ){
-      lcd.setCursor(0,0);
-      lcd.print(mensagem[i]);
-      lcd.setCursor(0,1);
-      lcd.print(mensagemf[i]);
-      indice += 1 %3;
-      tempoUltimaMensagem = agora;
-      }
-  }
 
-    
+    //lista de mensagens a serem exibidas quando estiver tudo ok
+        String mensagem[] = {"Luminosidade OK", "Temperatura OK", "Umidade OK"};
+        String valores[] = {String(mediaLDR), String(mediaTemp) +" C", String(mediaUmid)+"%"};
+
+      for(int i = 0; i < 3; i++ ){
+        escreveNaTela(mensagem[i], valores[i]);
+        indice = (indice + 1) / 3;
+        delay(1000);
+      }
+    }
+    tempoUltimaMensagem = agora;
   }  
-    defineEstado(estado);  
+  defineEstado(estado);  
 }
 
+
+void escreveNaTela(String linha1, String linha2) {
+    lcd.clear();
+    lcd.setCursor(0,0);
+    lcd.print(linha1);
+    lcd.setCursor(0,1);
+    lcd.print(linha2);
+}
 
 void defineEstado(int estado) {
   switch (estado) {
@@ -223,9 +204,3 @@ void defineEstado(int estado) {
 
   }
 }
-
-enum TipoStatus {
-  Temperatura, 
-  Umidade,
-  Luminosidade
-};
