@@ -1,7 +1,7 @@
 # Checkpoint 2 - O Caso de Luminosidade,Temperatura e Umidade 
 Projeto de circuito para uma vinheria que busca automatizar o  <strong>monitoramento de luminosiade, temperatura e umidade </strong> dos vinhos armazenados na adega da vinícula. Utilizando dos conceitos aprendidos em sala de aula e pesquisas sobre o tema.
 
-Veja o vídeo explicativo do projeto 👉 **[Clique aqui!](https://youtu.be/aapwjsI5mDc)**
+Veja o vídeo explicativo do projeto 👉 **[Clique aqui!](https://youtu.be/0HmHS1nKGsA?si=TfqQVBdEsGn9PwJo)**
 
 ## 👥 Equipe do Projeto
 * Julia Souza Costa Schiavi 
